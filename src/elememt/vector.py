@@ -14,11 +14,12 @@ This module contains some useful functions for dealing with vector
     operator + : vector addition
     operator - : vector subtraction
     operator * : scalar multiplication and dot product
-    inner product: inner product of
-    copy() : copies this vector and returns it.
+    inner product: inner product of two vector
+    scalar product: scalar product of vector and a number
 
-    changeComponent(pos,value) : changes the specified component.
+    change_component(pos,value) : changes the specified component.
 """
+import math
 
 
 class Vector(object):
@@ -54,15 +55,23 @@ class Vector(object):
         else:
             return None
 
+    # return euclid length of vector
+    def euclid_length(self):
+        result = 0
+        dim = self.dimension()
+        for i in range(dim):
+            result += self.__components[i] * self.__components[i]
+        return math.sqrt(result)
+
     # addition
     def __add__(self, other):
         result = []
-        dim = self.dimension();
+        dim = self.dimension()
         if other.dimension() == dim:
             for i in range(dim):
                 result.append(self.__components[i] + other.component(i))
         else:
-            raise Exception("two vectors must be in the same dimension");
+            raise Exception("two vectors must be in the same dimension")
         return Vector(result)
 
     # subtraction
@@ -73,7 +82,7 @@ class Vector(object):
             for i in range(dim):
                 result.append(self.__components[i] - other.component(i))
         else:
-            raise Exception("two vectors must be in the same dimension");
+            raise Exception("two vectors must be in the same dimension")
         return Vector(result)
 
     # scalar product or inner product
@@ -95,13 +104,21 @@ class Vector(object):
     # inner product
     def inner_product(self, other):
         result = 0
-        dim = self.dimension();
+        dim = self.dimension()
         if other.dimension() == dim:
             for i in range(dim):
                 result += self.__components[i] * other.component(i)
         else:
-            raise Exception("two vectors must be in the same dimension");
+            raise Exception("two vectors must be in the same dimension")
         return result
+
+    # changes the specified component
+    def change_component(self, pos, value):
+        if self.dimension() > pos:
+            self.__components[pos] = value
+            return self
+        else:
+            raise Exception("index exceed the limit")
 
 
 def main():
@@ -109,9 +126,11 @@ def main():
     v2 = Vector([2, 3, 4])
     print(v1 + v2)
     print(v1 - v2)
-    print(v1 * 3)
-    print (v1 * v2)
+    print(v1 * 3.0)
+    print(v1 * v2)
     print(v1.inner_product(v2))
+    print(v1.change_component(2, 0))
+    print(v1.euclid_length())
 
 
 if __name__ == "__main__":
