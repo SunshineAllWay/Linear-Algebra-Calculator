@@ -9,6 +9,7 @@ This module contains some useful functions for dealing with vector
     __str__() : toString method
     dimension() : gets the dimension of the vector (number of components)
     component(i : int): gets the i-th component (start by 0)
+    change_component(pos,value) : changes the specified component.
     euclidLength() : returns the eulidean length of the vector.
 
     operator + : vector addition
@@ -17,9 +18,14 @@ This module contains some useful functions for dealing with vector
     inner product: inner product of two vector
     scalar product: scalar product of vector and a number
 
-    change_component(pos,value) : changes the specified component.
+    pure_vector: return vector containing the same number
+    zero_vector: return vector containing 0
+    one_vector: return vector containing 1
+    unit_base_vector: return the unit base vector
+    random_vector: return the vector containing the random numbers between 0 to 1
 """
 import math
+import random
 
 
 class Vector(object):
@@ -54,6 +60,14 @@ class Vector(object):
             return self.__components[i]
         else:
             return None
+
+    # changes the specified component
+    def change_component(self, pos, value):
+        if self.dimension() > pos:
+            self.__components[pos] = value
+            return self
+        else:
+            raise Exception("index exceed the limit")
 
     # return euclid length of vector
     def euclid_length(self):
@@ -112,13 +126,37 @@ class Vector(object):
             raise Exception("two vectors must be in the same dimension")
         return result
 
-    # changes the specified component
-    def change_component(self, pos, value):
-        if self.dimension() > pos:
-            self.__components[pos] = value
-            return self
-        else:
-            raise Exception("index exceed the limit")
+
+# return vector containing the same number
+def pure_vector(dim, a):
+    result = []
+    for i in range(dim):
+        result.append(a)
+    return Vector(result)
+
+
+# return vector containing 0
+def zero_vector(dim):
+    return pure_vector(dim, 0)
+
+
+# return vector containing 1
+def one_vector(dim):
+    return pure_vector(dim, 1)
+
+
+# return the unit base vector
+def unit_base_vector(dim, pos):
+    v = zero_vector(dim)
+    v.change_component(pos, 1)
+    return v
+
+# return the vector containing the random numbers between 0 to 1
+def random_vector(dim):
+    result = []
+    for i in range(dim):
+        result.append(random.random());
+    return Vector(result)
 
 
 def main():
@@ -131,6 +169,17 @@ def main():
     print(v1.inner_product(v2))
     print(v1.change_component(2, 0))
     print(v1.euclid_length())
+
+    u1 = zero_vector(3)
+    u2 = one_vector(3)
+    u3 = unit_base_vector(3,0)
+    u4 = random_vector(3)
+    u5 = pure_vector(3, 6)
+    print(u1)
+    print(u2)
+    print(u3)
+    print(u4)
+    print(u5)
 
 
 if __name__ == "__main__":
