@@ -20,7 +20,6 @@ This module contains some useful functions for dealing with vector
 
     pure_vector: return vector containing the same number
     zero_vector: return vector containing 0
-    one_vector: return vector containing 1
     unit_base_vector: return the unit base vector
     random_vector: return the vector containing the random numbers between 0 to 1
 """
@@ -140,11 +139,6 @@ def zero_vector(dim):
     return pure_vector(dim, 0)
 
 
-# return vector containing 1
-def one_vector(dim):
-    return pure_vector(dim, 1)
-
-
 # return the unit base vector
 def unit_base_vector(dim, pos):
     v = zero_vector(dim)
@@ -171,7 +165,6 @@ def main():
     print(v1.euclid_length())
 
     u1 = zero_vector(3)
-    u2 = one_vector(3)
     u3 = unit_base_vector(3,0)
     u4 = random_vector(3)
     u5 = pure_vector(3, 6)
