@@ -16,6 +16,7 @@ Overview:
          height() : returns the height of the matrix
          operator + : implements the matrix-addition.
          operator - _ implements the matrix-subtraction
+         transpose : transpose the matrix
 
 - function squareZeroMatrix(N)
 - function randomMatrix(W,H,a,b)
@@ -50,12 +51,39 @@ class Matrix(object):
     def row(self):
         return self.__row
 
+    # get element at (i, j)
+    def element(self, i, j):
+        return self.__matrix[i][j]
+
+    # multiple with a matrix
+    def multiple_matrix(self, A):
+        if self.col() != A.row():
+            return None
+        else:
+            matrix = []
+            for i in range(self.row()):
+                singlerow = []
+                for j in range(A.col()):
+                    acc = 0
+                    for k in range(self.col()):
+                        acc += self.__matrix[i][k] * A.element(k, j);
+                    singlerow.append(acc)
+                matrix.append(singlerow)
+            C = Matrix(matrix, self.row(), A.col())
+            return C
+
 
 def main():
     A = Matrix([[1, 2, 3], [2, 4, 5]], 2, 3)
+    B = Matrix([[1, 0], [0, 1], [0, 0]], 3, 2)
     print(A)
     print(A.row())
     print(A.col())
+    print(B)
+    print(B.row())
+    print(B.col())
+    C = A.multiple_matrix(B)
+    print(C)
 
 
 if __name__ == "__main__":
