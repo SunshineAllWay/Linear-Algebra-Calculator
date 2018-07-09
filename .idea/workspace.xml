@@ -26,8 +26,11 @@
       <file leaf-file-name="vector.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/elememt/vector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4576">
-              <caret line="177" selection-start-line="177" selection-end-line="178" selection-end-column="10" />
+            <state relative-caret-position="411">
+              <caret line="124" column="72" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="72" />
+              <folding>
+                <element signature="e#1000#1011#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -35,8 +38,8 @@
       <file leaf-file-name="matrix.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/elememt/matrix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+            <state relative-caret-position="232">
+              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -87,12 +90,6 @@
               <item name="Linear-Algebra-Calculator" type="b2602c69:ProjectViewProjectNode" />
               <item name="Linear-Algebra-Calculator" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Linear-Algebra-Calculator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Linear-Algebra-Calculator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="elememt" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -168,16 +165,16 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64529055" visible="true" weight="0.1890882" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.64102566" visible="true" weight="0.1890882" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3290938" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14261168" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3290938" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.3298969" />
-      <window_info id="Structure" order="1" sideWeight="0.35470942" side_tool="true" visible="true" weight="0.1890882" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.22508591" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39862543" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3298969" />
+      <window_info id="Structure" order="1" sideWeight="0.35897437" side_tool="true" visible="true" weight="0.1890882" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.0" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39862543" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -196,11 +193,12 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/elememt/matrix.py</url>
-          <line>85</line>
+          <url>file://$PROJECT_DIR$/src/elememt/vector.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -507,15 +505,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/elememt/vector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4576">
-          <caret line="177" selection-start-line="177" selection-end-line="178" selection-end-column="10" />
+        <state relative-caret-position="411">
+          <caret line="124" column="72" lean-forward="true" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="72" />
+          <folding>
+            <element signature="e#1000#1011#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/elememt/matrix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="82" column="18" lean-forward="true" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        <state relative-caret-position="232">
+          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
         </state>
       </provider>
     </entry>
