@@ -145,11 +145,12 @@ def unit_base_vector(dim, pos):
     v.change_component(pos, 1)
     return v
 
+
 # return the vector containing the random numbers between 0 to 1
 def random_vector(dim):
     result = []
     for i in range(dim):
-        result.append(random.random());
+        result.append(random.random())
     return Vector(result)
 
 
@@ -165,11 +166,10 @@ def main():
     print(v1.euclid_length())
 
     u1 = zero_vector(3)
-    u3 = unit_base_vector(3,0)
+    u3 = unit_base_vector(3, 0)
     u4 = random_vector(3)
     u5 = pure_vector(3, 6)
     print(u1)
-    print(u2)
     print(u3)
     print(u4)
     print(u5)

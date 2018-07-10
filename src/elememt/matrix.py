@@ -8,8 +8,10 @@ Overview:
 - class Matrix
     Overview about the methods:
          __str__() : returns a string representation
-         operator * : implements the matrix vector multiplication
-         implements the matrix-scalar multiplication.
+         operator * : implements the matrix multiplication
+         multiple_vector : multiple with a vector
+         multiple_matrix : multiple with a matrix
+         multiple_scalar : multiple with a scalar
          changeComponent(x,y,value) : changes the specified component.
          component(x,y) : returns the specified component.
          row() : returns the count of rows of the matrix
@@ -18,9 +20,13 @@ Overview:
          operator - _ implements the matrix-subtraction
          transpose : transpose the matrix
 
-- function squareZeroMatrix(N)
-- function randomMatrix(W,H,a,b)
+- function squareZeroMatrix(N) : generate zero square matrix
+- function randomMatrix(row, col) : generate random matrix
+- function unitMatrix(N) : generate unit matrix
 """
+import math
+import random
+
 
 class Matrix(object):
 
@@ -61,7 +67,7 @@ class Matrix(object):
                 for j in range(A.col()):
                     acc = 0
                     for k in range(self.col()):
-                        acc += self.__matrix[i][k] * A.element(k, j);
+                        acc += self.__matrix[i][k] * A.component(k, j);
                     singlerow.append(acc)
                 matrix.append(singlerow)
             C = Matrix(matrix, self.row(), A.col())
@@ -113,6 +119,36 @@ class Matrix(object):
         return self + A.multiple_scalar(-1.0)
 
 
+# generate zero square matrix
+def squareZeroMatrix(N):
+    square = []
+    for i in range(N):
+        singlerow = []
+        for j in range(N):
+            singlerow.append(0)
+        square.append(singlerow)
+    return Matrix(square, N, N)
+
+
+# generate random matrix
+def randomMatrix(row, col):
+    component = []
+    for i in range(row):
+        singlerow = []
+        for j in range(col):
+            singlerow.append(random.random())
+        component.append(singlerow)
+    return Matrix(component, row, col)
+
+
+# generate unit matrix
+def unitMatrix(N):
+    A = squareZeroMatrix(N)
+    for i in range(N):
+        A.changeComponent(i, i, 1)
+    return A
+
+
 def main():
     A = Matrix([[1, 2, 3], [2, 4, 5]], 2, 3)
     B = Matrix([[1, 0], [0, 1], [0, 0]], 3, 2)
@@ -123,9 +159,12 @@ def main():
     print(B)
     print(B.row())
     print(B.col())
-    D = A.multiple_matrix(B)
+    A.multiple_matrix(B)
     print(A.multiple_scalar(-1.0))
     print(A - C)
+    print(squareZeroMatrix(2))
+    print(unitMatrix(2))
+    print(randomMatrix(2,2))
 
 
 if __name__ == "__main__":
